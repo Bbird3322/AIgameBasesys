@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM Game Base</title>
+  <style>
+    :root {
+      --bg-a: #0f172a;
+      --bg-b: #1f2937;
+      --panel: rgba(10, 15, 28, 0.78);
+      --line: rgba(255, 255, 255, 0.16);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #f59e0b;
+      --ok: #34d399;
+      --bad: #f87171;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Segoe UI", "Yu Gothic UI", Meiryo, sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, #1d4ed8 0%, transparent 42%),
+        radial-gradient(circle at 80% 70%, #7c2d12 0%, transparent 40%),
+        linear-gradient(135deg, var(--bg-a), var(--bg-b));
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .app {
+      width: min(980px, 100%);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      border-radius: 18px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+    }
+
+    header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .log {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      min-height: 56vh;
+      max-height: 62vh;
+      overflow: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(2, 6, 23, 0.6);
+    }
+
+    .msg {
+      max-width: 90%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      animation: fadeIn 180ms ease-out;
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+    }
+
+    .msg.gm {
+      align-self: flex-start;
+      background: rgba(59, 130, 246, 0.18);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 78px;
+      max-height: 190px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.7);
+      color: var(--text);
+      padding: 10px 12px;
+      font: inherit;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 0 18px;
+      min-width: 120px;
+      font-weight: 700;
+      cursor: pointer;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      transition: transform 120ms ease, opacity 120ms ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+    button:disabled { opacity: 0.5; cursor: wait; transform: none; }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0 4px;
+    }
+
+    .agent-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .agent-controls select {
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.7);
+      color: var(--text);
+      padding: 4px 6px;
+    }
+
+    .ok { color: var(--ok); }
+    .bad { color: var(--bad); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      button {
+        height: 42px;
+      }
+
+      .log {
+        min-height: 48vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="app">
+    <header>
+      <h1>LLM Game Base</h1>
+      <div id="status" class="status">ready</div>
+    </header>
+
+    <main>
+      <div id="log" class="log" aria-live="polite"></div>
+      <div class="row">
+        <textarea id="input" placeholder="行動を入力: 例) 酒場で怪しい商人に声をかける"></textarea>
+        <button id="sendBtn">実行</button>
+      </div>
+      <div class="footer">
+        <span>エンドポイント: /api/chat (llama.cpp)</span>
+        <div class="agent-controls">
+          <label for="agentCount">Agents</label>
+          <select id="agentCount">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <span id="healthLabel" class="bad">llama: unknown</span>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <script src="./game.js"></script>
+</body>
+</html>

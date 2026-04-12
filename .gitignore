@@ -1,0 +1,8 @@
+# Runtime-generated state
+scripts/llama-server.state.json
+scripts/game-server.state.json
+config/runtimeProfile.json
+config/agentsProfile.json
+
+# Optional local overrides
+*.local
