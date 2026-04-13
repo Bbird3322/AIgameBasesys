@@ -1,9 +1,9 @@
 # Runtime-generated state
 scripts/llama-server.state.json
 scripts/game-server.state.json
-config/runtimeProfile.json
-config/agentsProfile.json
+config/**/*.json
 scripts/llama-server.env.bat
+logs/**
 
 # Optional local overrides
 *.local
