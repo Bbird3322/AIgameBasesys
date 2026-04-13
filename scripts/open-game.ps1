@@ -23,7 +23,7 @@ function Test-Health([string]$Url) {
 }
 
 if (-not (Test-Health $healthUrl)) {
-  $args = @(
+  $launchArguments = @(
     '-NoProfile',
     '-WindowStyle', 'Hidden',
     '-ExecutionPolicy', 'Bypass',
@@ -32,18 +32,16 @@ if (-not (Test-Health $healthUrl)) {
     '-Port', $Port
   )
 
-  Start-Process -FilePath "powershell.exe" -ArgumentList $args -WindowStyle Hidden | Out-Null
+  Start-Process -FilePath "powershell.exe" -ArgumentList $launchArguments -WindowStyle Hidden | Out-Null
 
-  $ok = $false
-  1..20 | ForEach-Object {
+  for ($i = 0; $i -lt 20; $i++) {
     if (Test-Health $healthUrl) {
-      $ok = $true
-      return
+      break
     }
     Start-Sleep -Milliseconds 500
   }
 
-  if (-not $ok) {
+  if (-not (Test-Health $healthUrl)) {
     throw "Game server did not become ready."
   }
 }

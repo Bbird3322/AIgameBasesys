@@ -47,7 +47,7 @@ function Write-StringResponse {
 function Get-LlamaBaseUrl {
   if (Test-Path -LiteralPath $runtimeProfilePath -PathType Leaf) {
     try {
-      $runtimeCfg = Get-Content -LiteralPath $runtimeProfilePath -Raw | ConvertFrom-Json
+      $runtimeCfg = Get-Content -LiteralPath $runtimeProfilePath -Raw -Encoding UTF8 | ConvertFrom-Json
       if ($runtimeCfg.llamaCppUrl) {
         return [string]$runtimeCfg.llamaCppUrl
       }

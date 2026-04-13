@@ -1,6 +1,8 @@
 # AIgameBasesys (Local llama.cpp Game Base)
 
-llama.cpp を使ってローカルで動かす、テキストRPG母体です。
+llama.cpp をローカル実行基盤として使う、開発者向けテキストRPGベースです。
+ゲーム UI、ローカル配信、llama-server 起動管理を最初から分離しているので、
+「とりあえず遊べる雛形」を起点にゲームロジックを積みやすい構成になっています。
 
 ## 最短起動
 
@@ -11,29 +13,49 @@ llama.cpp を使ってローカルで動かす、テキストRPG母体です。
 `START.bat` はフォールバック入口で、実際のGUIは `scripts/launch-llama-server.ps1` です。
 エラーやクラッシュは `logs/` に TXT で保存され、ポップアップでも通知されます。
 
+起動時は小さな待機ポップアップが出て、GUI が開いたら自動で閉じます。
+エラー系ログは `logs/error/` に分けて保存されます。
+
+## EXEビルド（正式版向け）
+
+PowerShell で以下を実行すると、`ps2exe` を使って EXE を生成します。
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-exe.ps1
+```
+
+生成物:
+
+- `START.exe`
+- `scripts/launch-llama-server.exe`
+
+起動時は `START.bat` が `START.exe` を優先し、未生成時のみ `START.ps1` にフォールバックします。
+
 ## フォルダ構成
 
 - `index.html` / `game.js`
-  - ゲームUI本体
+  - ブラウザ側のゲーム UI と進行ロジック
 - `scripts/`
-  - 起動・停止・ローカルHTTPサーバー
-- `llama-runtime/bin/`
-  - `llama-server.exe` など実行バイナリ
-- `llama-runtime/models/`
-  - `.gguf` モデル
+  - 起動、停止、ローカル HTTP サーバー、ランチャー GUI
+- `llama-runtime/`
+  - CPU/GPU 別の `llama-server.exe` と関連 DLL
+- `models/`
+  - `.gguf` モデル配置先
 - `config/runtimeProfile.json`
   - ランチャーが出力する実行時プロファイル（自動生成）
+- `config/agentsProfile.json`
+  - AI エージェント一覧と各ポート・モデル設定
 
 ## モデルの入れ方
 
-1. `.gguf` ファイルを `llama-runtime/models/` に置く
+1. `.gguf` ファイルを `llama-runtime/models/` または `models/` に置く
 2. `START.bat` を実行してランチャーを開く
 3. モデル一覧から追加したモデルを選ぶ
 4. `Start llama-server` を押す
 
 補足:
 
-- 推奨配置先は `llama-runtime/models/` です
+- 既定では `llama-runtime/models/` を見に行き、無ければ `models/` を使います
 - ファイル名は自由ですが拡張子は `.gguf` が必要です
 - ランチャーに出ない場合は `Refresh` を押してください
 
@@ -158,11 +180,12 @@ API連携先の変更:
 
 ## コンフィグのいじり方
 
-固定設定を編集したい場合は `scripts/llama-server.env.bat` を編集します。
+`scripts/llama-server.env.bat` はランチャーが自動生成するローカル設定ファイルです。
+GitHub には含めない前提なので、開発マシンごとの絶対パスや実験用設定をそのまま置けます。
 
 よく使う項目:
 
-- `LLAMA_CPP_EXE`
+- `LLAMA_CPP_EXE_CPU` / `LLAMA_CPP_EXE_GPU`
   - `llama-server.exe` の絶対パス
 - `LLAMA_MODEL_PATH`
   - 起動時に使う `.gguf` の絶対パス
@@ -179,6 +202,8 @@ API連携先の変更:
 
 - `config/runtimeProfile.json` はランチャーが自動生成する実行情報です（手動編集は基本不要）
 - 設定を変えたら、一度 `Stop All` してから再起動すると反映が確実です
+- CUDA runtime が無い環境では、GPU モードを選んでいても CPU モードへ自動で切り替えて起動します
+- 設定タブのアップデート機能は、Git 管理された開発コピーでのみ動作します
 
 ## エラーコードの見方
 
@@ -206,11 +231,15 @@ API連携先の変更:
 ## 主要スクリプト
 
 - `START.bat`
-  - 外側の操作ハブ（起動/ゲーム/停止）
+  - 配布用の入口。`START.exe` があればそちらを優先起動
+- `START.ps1`
+  - 起動前クリーンアップ、ポップアップ、ランチャー起動監視
 - `scripts/launch-llama-server.ps1`
-  - GUI本体。モデル選択、ゲーム開始、全停止をまとめる
+  - GUI 本体。モデル選択、AI 構成、起動、更新、設定保存を担当
 - `scripts/serve-game.ps1`
-  - 静的配信 + `/api/chat` を llama.cpp に中継
+  - 静的配信 + `/api/chat` の llama.cpp 中継
+- `scripts/build-exe.ps1`
+  - `ps2exe` を使った `START.exe` / ランチャー EXE の再生成
 
 ## 整理方針
 
@@ -230,12 +259,19 @@ API連携先の変更:
 
 ## 補足
 
-- `scripts/llama-server.env.bat` は固定パスを手動指定できます。
+- `scripts/llama-server.env.bat` はローカル自動生成ファイルで、GitHub には含めません。
 - 何も指定しない場合、ランチャーは同梱 `llama-runtime` を優先して使います。
 
 ## このベースを基にゲームを作る（開発者向け）
 
-このプロジェクトは「UI層」「ゲーム状態層」「LLM通信層」を分離して拡張する前提で作ると保守しやすくなります。
+このプロジェクトは、次の 3 層を分けたまま育てると保守しやすいです。
+
+- UI 層
+  - `index.html` / `game.js` の表示と入力
+- ゲーム状態層
+  - HP、フラグ、分岐、セーブデータなどの正解データ
+- LLM 通信層
+  - `scripts/serve-game.ps1` と llama-server の呼び出し
 
 ### 設計方針
 
@@ -253,7 +289,7 @@ LLMの出力をゲームの真実データにしないことが重要です。
 - `scripts/serve-game.ps1`
   - `/api/chat` のプロキシ処理
 - `scripts/llama-server.env.bat`
-  - llama.cpp 実行設定
+  - llama.cpp 実行設定。起動時に無ければ自動生成
 
 ### 最小ゲームループ実装例
 

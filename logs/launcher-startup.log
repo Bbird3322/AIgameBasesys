@@ -1,0 +1,15 @@
+﻿18:44:17.874 begin
+18:44:18.219 data loaded
+18:44:18.323 controls created
+18:44:18.519 before Refresh-AgentListView
+18:44:18.527 before Refresh-AgentCheckList
+18:44:18.537 before Refresh-ModelPathGrid
+18:44:18.542 before Repair-AgentEntries
+18:44:18.573 before Refresh-ProfileList
+18:44:18.573 before Set-LanguageCombo
+18:44:18.573 before Apply-UiLanguage
+18:44:18.668 before Refresh-HealthTab
+18:44:20.730 skip Refresh-LogsTab (manual mode)
+18:44:20.968 tabs refreshed
+18:44:20.968 before ShowDialog
+18:44:40.476 dialog closed

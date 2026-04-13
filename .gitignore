@@ -3,6 +3,7 @@ scripts/llama-server.state.json
 scripts/game-server.state.json
 config/runtimeProfile.json
 config/agentsProfile.json
+scripts/llama-server.env.bat
 
 # Optional local overrides
 *.local
