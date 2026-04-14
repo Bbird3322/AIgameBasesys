@@ -3,6 +3,14 @@
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
+try {
+  $securityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor [System.Net.SecurityProtocolType]::Tls12
+  if ([enum]::GetNames([System.Net.SecurityProtocolType]) -contains "Tls13") {
+    $securityProtocol = $securityProtocol -bor [System.Net.SecurityProtocolType]::Tls13
+  }
+  [System.Net.ServicePointManager]::SecurityProtocol = $securityProtocol
+} catch {}
+
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
 function Show-ErrorDialog {
@@ -36,6 +44,40 @@ function Get-HfHeaders {
   return $headers
 }
 
+function ConvertFrom-HfApiJson {
+  param([string]$Content)
+
+  if ([string]::IsNullOrWhiteSpace($Content)) {
+    return @()
+  }
+
+  $parsed = $Content | ConvertFrom-Json
+  if ($parsed -is [System.Array]) {
+    return @($parsed)
+  }
+  if ($parsed.PSObject.Properties.Name -contains "models") {
+    return @($parsed.models)
+  }
+  return @($parsed)
+}
+
+function Get-HfNextLink {
+  param([string]$LinkHeader)
+
+  if ([string]::IsNullOrWhiteSpace($LinkHeader)) {
+    return $null
+  }
+
+  $matches = [regex]::Matches($LinkHeader, '<([^>]+)>;\s*rel="([^"]+)"')
+  foreach ($match in $matches) {
+    if ([string]$match.Groups[2].Value -eq "next") {
+      return [string]$match.Groups[1].Value
+    }
+  }
+
+  return $null
+}
+
 function Read-JsonFileSafe {
   param([string]$Path)
 
@@ -63,27 +105,35 @@ function Get-ConfiguredModelDir {
 }
 
 function Get-HfLlamaCppModels {
-  param([int]$MaxCount = 500)
+  param([int]$MaxCount = 0)
 
   $pageSize = 100
-  $offset = 0
   $collected = @()
+  $nextUri = "https://huggingface.co/api/models?filter=llama.cpp&sort=downloads&direction=-1&limit=$pageSize"
 
-  while ($collected.Count -lt $MaxCount) {
-    $remaining = $MaxCount - $collected.Count
-    $limit = [Math]::Min($pageSize, $remaining)
-    $uri = "https://huggingface.co/api/models?filter=llama.cpp&sort=downloads&direction=-1&limit=$limit&offset=$offset"
-    $response = @(Invoke-RestMethod -Uri $uri -Headers (Get-HfHeaders -Token "") -Method Get)
-    if ($response.Count -eq 0) {
+  while (-not [string]::IsNullOrWhiteSpace($nextUri)) {
+    $response = Invoke-WebRequest -Uri $nextUri -Headers (Get-HfHeaders -Token "") -Method Get -UseBasicParsing
+    $items = @(ConvertFrom-HfApiJson -Content $response.Content)
+    if ($items.Count -eq 0) {
       break
     }
 
-    $collected += $response
-    if ($response.Count -lt $limit) {
-      break
+    if ($MaxCount -gt 0) {
+      $remaining = $MaxCount - $collected.Count
+      if ($remaining -le 0) {
+        break
+      }
+      if ($items.Count -gt $remaining) {
+        $collected += @($items | Select-Object -First $remaining)
+        break
+      }
     }
 
-    $offset += $response.Count
+    $collected += $items
+    $nextUri = Get-HfNextLink -LinkHeader ([string]$response.Headers["Link"])
+    if ($items.Count -lt $pageSize) {
+      break
+    }
   }
 
   $seen = @{}
@@ -112,6 +162,67 @@ function Get-HfLlamaCppModels {
   }
 
   return $result
+}
+
+function Get-SafeDateTime {
+  param([string]$Value)
+
+  if ([string]::IsNullOrWhiteSpace($Value)) {
+    return [datetime]::MinValue
+  }
+
+  $parsed = [datetime]::MinValue
+  if ([datetime]::TryParse($Value, [ref]$parsed)) {
+    return $parsed.ToUniversalTime()
+  }
+
+  return [datetime]::MinValue
+}
+
+function Get-ModelTrendScore {
+  param([object]$Model)
+
+  $lastChangedUtc = Get-SafeDateTime -Value ([string]$Model.LastChanged)
+  $ageDays = [Math]::Max(1.0, ([datetime]::UtcNow - $lastChangedUtc).TotalDays)
+  $downloads = [double]([int64]$Model.Downloads)
+  return [Math]::Round($downloads / [Math]::Pow($ageDays + 2.0, 0.6), 2)
+}
+
+function Sort-Models {
+  param([object[]]$Models)
+
+  $sortBy = [string]$script:modelSortMode
+
+  switch ($sortBy) {
+    "LastChanged" {
+      return @(
+        $Models |
+          Sort-Object -Property `
+            @{ Expression = { Get-SafeDateTime -Value ([string]$_.LastChanged) }; Descending = $true }, `
+            @{ Expression = { [int64]$_.Downloads }; Descending = $true }, `
+            @{ Expression = { [string]$_.RepoId }; Descending = $false }
+      )
+    }
+    "Trend" {
+      return @(
+        $Models |
+          Sort-Object -Property `
+            @{ Expression = { Get-ModelTrendScore -Model $_ }; Descending = $true }, `
+            @{ Expression = { Get-SafeDateTime -Value ([string]$_.LastChanged) }; Descending = $true }, `
+            @{ Expression = { [int64]$_.Downloads }; Descending = $true }, `
+            @{ Expression = { [string]$_.RepoId }; Descending = $false }
+      )
+    }
+    default {
+      return @(
+        $Models |
+          Sort-Object -Property `
+            @{ Expression = { [int64]$_.Downloads }; Descending = $true }, `
+            @{ Expression = { Get-SafeDateTime -Value ([string]$_.LastChanged) }; Descending = $true }, `
+            @{ Expression = { [string]$_.RepoId }; Descending = $false }
+      )
+    }
+  }
 }
 
 function Get-CategoryNameFromRepoId {
@@ -421,6 +532,7 @@ $script:categories = @()
 $script:repoFiles = @()
 $script:selectedCategory = "All"
 $script:selectedRepoId = ""
+$script:modelSortMode = "Downloads"
 $defaultModelDir = Get-ConfiguredModelDir
 
 $form = New-Object System.Windows.Forms.Form
@@ -428,6 +540,9 @@ $form.Text = "HF GGUF Downloader"
 $form.StartPosition = "CenterScreen"
 $form.Size = New-Object System.Drawing.Size(820, 620)
 $form.MinimumSize = New-Object System.Drawing.Size(820, 620)
+$form.MaximumSize = New-Object System.Drawing.Size(820, 620)
+$form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedSingle
+$form.MaximizeBox = $false
 $form.BackColor = [System.Drawing.Color]::FromArgb(245, 247, 250)
 
 $titleLabel = New-Object System.Windows.Forms.Label
@@ -602,17 +717,34 @@ $refreshModelsButton.Location = New-Object System.Drawing.Point(610, 0)
 $refreshModelsButton.Size = New-Object System.Drawing.Size(150, 30)
 $listPanel.Controls.Add($refreshModelsButton)
 
+$sortLabel = New-Object System.Windows.Forms.Label
+$sortLabel.Text = "Sort by"
+$sortLabel.Location = New-Object System.Drawing.Point(4, 36)
+$sortLabel.Size = New-Object System.Drawing.Size(60, 20)
+$listPanel.Controls.Add($sortLabel)
+
+$sortComboBox = New-Object System.Windows.Forms.ComboBox
+$sortComboBox.Location = New-Object System.Drawing.Point(68, 32)
+$sortComboBox.Size = New-Object System.Drawing.Size(220, 28)
+$sortComboBox.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
+[void]$sortComboBox.Items.Add("Downloads")
+[void]$sortComboBox.Items.Add("Last updated")
+[void]$sortComboBox.Items.Add("Trend")
+$sortComboBox.SelectedIndex = 0
+$listPanel.Controls.Add($sortComboBox)
+
 $modelsListView = New-Object System.Windows.Forms.ListView
-$modelsListView.Location = New-Object System.Drawing.Point(4, 40)
-$modelsListView.Size = New-Object System.Drawing.Size(756, 400)
+$modelsListView.Location = New-Object System.Drawing.Point(4, 68)
+$modelsListView.Size = New-Object System.Drawing.Size(756, 372)
 $modelsListView.View = [System.Windows.Forms.View]::Details
 $modelsListView.FullRowSelect = $true
 $modelsListView.MultiSelect = $false
 $modelsListView.GridLines = $true
 $modelsListView.HideSelection = $false
-[void]$modelsListView.Columns.Add("Repo", 430)
-[void]$modelsListView.Columns.Add("Downloads", 110)
-[void]$modelsListView.Columns.Add("Last Modified", 190)
+[void]$modelsListView.Columns.Add("Repo", 350)
+[void]$modelsListView.Columns.Add("Downloads", 100)
+[void]$modelsListView.Columns.Add("Last Modified", 170)
+[void]$modelsListView.Columns.Add("Trend", 100)
 $listPanel.Controls.Add($modelsListView)
 
 $listStatusLabel = New-Object System.Windows.Forms.Label
@@ -749,12 +881,13 @@ function Refresh-CategoryListView {
 function Refresh-ModelListView {
   $modelsListView.Items.Clear()
 
-  $filteredModels = @(Get-ModelsForCurrentCategory)
+  $filteredModels = @(Sort-Models -Models @(Get-ModelsForCurrentCategory))
 
   foreach ($model in $filteredModels) {
     $item = New-Object System.Windows.Forms.ListViewItem($model.RepoId)
     [void]$item.SubItems.Add(([string]$model.Downloads))
     [void]$item.SubItems.Add($model.LastChanged)
+    [void]$item.SubItems.Add(([string](Get-ModelTrendScore -Model $model)))
     $item.Tag = $model
     [void]$modelsListView.Items.Add($item)
   }
@@ -767,11 +900,11 @@ function Load-ModelCatalog {
   $refreshModelsButton.Enabled = $false
   $openCategoryButton.Enabled = $false
   $openInstallButton.Enabled = $false
-  $categoryStatusLabel.Text = "Loading llama.cpp models..."
-  $listStatusLabel.Text = "Loading llama.cpp models..."
+  $categoryStatusLabel.Text = "Loading all llama.cpp models..."
+  $listStatusLabel.Text = "Loading all llama.cpp models..."
   [System.Windows.Forms.Application]::DoEvents()
 
-  $script:models = @(Get-HfLlamaCppModels -MaxCount 500)
+  $script:models = @(Get-HfLlamaCppModels)
   $script:categories = @(Get-ModelCategories -Models $script:models)
   Refresh-CategoryListView
   Refresh-ModelListView
@@ -885,6 +1018,16 @@ $othersButton.Add_Click({
 
 $refreshModelsButton.Add_Click({
   Invoke-Ui { Load-ModelCatalog }
+})
+
+$sortComboBox.Add_SelectedIndexChanged({
+  switch ([string]$sortComboBox.SelectedItem) {
+    "Last updated" { $script:modelSortMode = "LastChanged" }
+    "Trend" { $script:modelSortMode = "Trend" }
+    default { $script:modelSortMode = "Downloads" }
+  }
+
+  Refresh-ModelListView
 })
 
 $modelsListView.Add_SelectedIndexChanged({
