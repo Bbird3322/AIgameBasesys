@@ -1,0 +1,1061 @@
+{
+  "languages": {
+    "en": { "en": "English", "ja": "英語" },
+    "eng": { "en": "English", "ja": "英語" },
+    "ja": { "en": "Japanese", "ja": "日本語" },
+    "jpn": { "en": "Japanese", "ja": "日本語" },
+    "zh": { "en": "Chinese", "ja": "中国語" },
+    "zho": { "en": "Chinese", "ja": "中国語" },
+    "yue": { "en": "Yue Chinese", "ja": "広東語" },
+    "fr": { "en": "French", "ja": "フランス語" },
+    "fra": { "en": "French", "ja": "フランス語" },
+    "de": { "en": "German", "ja": "ドイツ語" },
+    "deu": { "en": "German", "ja": "ドイツ語" },
+    "es": { "en": "Spanish", "ja": "スペイン語" },
+    "spa": { "en": "Spanish", "ja": "スペイン語" },
+    "ru": { "en": "Russian", "ja": "ロシア語" },
+    "rus": { "en": "Russian", "ja": "ロシア語" },
+    "ko": { "en": "Korean", "ja": "韓国語" },
+    "kor": { "en": "Korean", "ja": "韓国語" },
+    "pt": { "en": "Portuguese", "ja": "ポルトガル語" },
+    "por": { "en": "Portuguese", "ja": "ポルトガル語" },
+    "it": { "en": "Italian", "ja": "イタリア語" },
+    "ita": { "en": "Italian", "ja": "イタリア語" },
+    "ar": { "en": "Arabic", "ja": "アラビア語" },
+    "ara": { "en": "Arabic", "ja": "アラビア語" },
+    "hi": { "en": "Hindi", "ja": "ヒンディー語" },
+    "hin": { "en": "Hindi", "ja": "ヒンディー語" },
+    "vi": { "en": "Vietnamese", "ja": "ベトナム語" },
+    "vie": { "en": "Vietnamese", "ja": "ベトナム語" },
+    "th": { "en": "Thai", "ja": "タイ語" },
+    "tha": { "en": "Thai", "ja": "タイ語" },
+    "id": { "en": "Indonesian", "ja": "インドネシア語" },
+    "ind": { "en": "Indonesian", "ja": "インドネシア語" },
+    "nl": { "en": "Dutch", "ja": "オランダ語" },
+    "nld": { "en": "Dutch", "ja": "オランダ語" },
+    "pl": { "en": "Polish", "ja": "ポーランド語" },
+    "pol": { "en": "Polish", "ja": "ポーランド語" },
+    "tr": { "en": "Turkish", "ja": "トルコ語" },
+    "tur": { "en": "Turkish", "ja": "トルコ語" },
+    "fa": { "en": "Persian", "ja": "ペルシャ語" },
+    "fas": { "en": "Persian", "ja": "ペルシャ語" },
+    "bn": { "en": "Bengali", "ja": "ベンガル語" },
+    "ben": { "en": "Bengali", "ja": "ベンガル語" },
+    "uk": { "en": "Ukrainian", "ja": "ウクライナ語" },
+    "el": { "en": "Greek", "ja": "ギリシャ語" },
+    "ell": { "en": "Greek", "ja": "ギリシャ語" },
+    "cs": { "en": "Czech", "ja": "チェコ語" },
+    "sv": { "en": "Swedish", "ja": "スウェーデン語" },
+    "swe": { "en": "Swedish", "ja": "スウェーデン語" },
+    "fi": { "en": "Finnish", "ja": "フィンランド語" },
+    "fin": { "en": "Finnish", "ja": "フィンランド語" },
+    "da": { "en": "Danish", "ja": "デンマーク語" },
+    "dan": { "en": "Danish", "ja": "デンマーク語" },
+    "no": { "en": "Norwegian", "ja": "ノルウェー語" },
+    "nb": { "en": "Norwegian Bokmal", "ja": "ノルウェー語ブークモール" },
+    "nn": { "en": "Norwegian Nynorsk", "ja": "ノルウェー語ニーノシュク" },
+    "he": { "en": "Hebrew", "ja": "ヘブライ語" },
+    "ro": { "en": "Romanian", "ja": "ルーマニア語" },
+    "ron": { "en": "Romanian", "ja": "ルーマニア語" },
+    "hu": { "en": "Hungarian", "ja": "ハンガリー語" },
+    "ca": { "en": "Catalan", "ja": "カタルーニャ語" },
+    "bg": { "en": "Bulgarian", "ja": "ブルガリア語" },
+    "hr": { "en": "Croatian", "ja": "クロアチア語" },
+    "sk": { "en": "Slovak", "ja": "スロバキア語" },
+    "sl": { "en": "Slovenian", "ja": "スロベニア語" },
+    "lt": { "en": "Lithuanian", "ja": "リトアニア語" },
+    "lv": { "en": "Latvian", "ja": "ラトビア語" },
+    "et": { "en": "Estonian", "ja": "エストニア語" },
+    "ms": { "en": "Malay", "ja": "マレー語" },
+    "sw": { "en": "Swahili", "ja": "スワヒリ語" },
+    "ta": { "en": "Tamil", "ja": "タミル語" },
+    "tam": { "en": "Tamil", "ja": "タミル語" },
+    "te": { "en": "Telugu", "ja": "テルグ語" },
+    "tel": { "en": "Telugu", "ja": "テルグ語" },
+    "ml": { "en": "Malayalam", "ja": "マラヤーラム語" },
+    "mr": { "en": "Marathi", "ja": "マラーティー語" },
+    "mar": { "en": "Marathi", "ja": "マラーティー語" },
+    "gu": { "en": "Gujarati", "ja": "グジャラート語" },
+    "kn": { "en": "Kannada", "ja": "カンナダ語" },
+    "pa": { "en": "Panjabi", "ja": "パンジャーブ語" },
+    "ur": { "en": "Urdu", "ja": "ウルドゥー語" },
+    "ne": { "en": "Nepali", "ja": "ネパール語" },
+    "si": { "en": "Sinhala", "ja": "シンハラ語" },
+    "my": { "en": "Burmese", "ja": "ビルマ語" },
+    "mya": { "en": "Burmese", "ja": "ビルマ語" },
+    "km": { "en": "Khmer", "ja": "クメール語" },
+    "lo": { "en": "Lao", "ja": "ラオ語" },
+    "ka": { "en": "Georgian", "ja": "ジョージア語" },
+    "hy": { "en": "Armenian", "ja": "アルメニア語" },
+    "kk": { "en": "Kazakh", "ja": "カザフ語" },
+    "ky": { "en": "Kyrgyz", "ja": "キルギス語" },
+    "uz": { "en": "Uzbek", "ja": "ウズベク語" },
+    "az": { "en": "Azerbaijani", "ja": "アゼルバイジャン語" },
+    "af": { "en": "Afrikaans", "ja": "アフリカーンス語" },
+    "am": { "en": "Amharic", "ja": "アムハラ語" },
+    "ha": { "en": "Hausa", "ja": "ハウサ語" },
+    "yo": { "en": "Yoruba", "ja": "ヨルバ語" },
+    "ig": { "en": "Igbo", "ja": "イボ語" },
+    "zu": { "en": "Zulu", "ja": "ズールー語" },
+    "xh": { "en": "Xhosa", "ja": "コサ語" },
+    "rw": { "en": "Kinyarwanda", "ja": "ルワンダ語" },
+    "so": { "en": "Somali", "ja": "ソマリ語" },
+    "ps": { "en": "Pashto", "ja": "パシュトー語" },
+    "ug": { "en": "Uyghur", "ja": "ウイグル語" },
+    "bo": { "en": "Tibetan", "ja": "チベット語" },
+    "sa": { "en": "Sanskrit", "ja": "サンスクリット語" },
+    "la": { "en": "Latin", "ja": "ラテン語" },
+    "eo": { "en": "Esperanto", "ja": "エスペラント" },
+    "cy": { "en": "Welsh", "ja": "ウェールズ語" },
+    "ga": { "en": "Irish", "ja": "アイルランド語" },
+    "eu": { "en": "Basque", "ja": "バスク語" },
+    "gl": { "en": "Galician", "ja": "ガリシア語" },
+    "oc": { "en": "Occitan", "ja": "オック語" },
+    "br": { "en": "Breton", "ja": "ブルトン語" },
+    "is": { "en": "Icelandic", "ja": "アイスランド語" },
+    "sq": { "en": "Albanian", "ja": "アルバニア語" },
+    "sr": { "en": "Serbian", "ja": "セルビア語" },
+    "bs": { "en": "Bosnian", "ja": "ボスニア語" },
+    "mk": { "en": "Macedonian", "ja": "マケドニア語" },
+    "tl": { "en": "Tagalog", "ja": "タガログ語" },
+    "jv": { "en": "Javanese", "ja": "ジャワ語" },
+    "sun": { "en": "Sundanese", "ja": "スンダ語" },
+    "su": { "en": "Sundanese", "ja": "スンダ語" },
+    "ceb": { "en": "Cebuano", "ja": "セブアノ語" },
+    "multilingual": { "en": "Multilingual", "ja": "多言語" },
+    "mul": { "en": "Multilingual", "ja": "多言語" },
+    "unknown": { "en": "Unknown", "ja": "不明" }
+  },
+  "pipelines": {
+    "text-generation": {
+      "description": {
+        "en": "Text generation: this model is intended to produce natural language continuations or replies from a prompt.",
+        "ja": "テキスト生成: 入力プロンプトに続く自然な文章や応答を生成する用途です。"
+      }
+    },
+    "text2text-generation": {
+      "description": {
+        "en": "Text-to-text generation: this model takes text input and rewrites or transforms it into another text output.",
+        "ja": "テキスト変換: 入力された文章を別の文章へ変換したり書き換えたりする用途です。"
+      }
+    },
+    "feature-extraction": {
+      "description": {
+        "en": "Feature extraction: this model converts text into vectors or hidden representations for search, clustering, or downstream tasks.",
+        "ja": "特徴抽出: 文章をベクトル表現に変換し、検索やクラスタリングなどに使う用途です。"
+      }
+    },
+    "sentence-similarity": {
+      "description": {
+        "en": "Sentence similarity: this model compares texts by embedding meaning and measuring closeness.",
+        "ja": "文類似度: 文章の意味の近さを比較する用途です。"
+      }
+    },
+    "fill-mask": {
+      "description": {
+        "en": "Fill-mask: this model predicts missing tokens inside a text sequence.",
+        "ja": "穴埋め: 文章中の欠けたトークンを予測する用途です。"
+      }
+    },
+    "token-classification": {
+      "description": {
+        "en": "Token classification: this model labels individual tokens, such as named entities or parts of a sentence.",
+        "ja": "トークン分類: 単語単位でラベル付けする用途です。固有表現抽出などが含まれます。"
+      }
+    },
+    "text-classification": {
+      "description": {
+        "en": "Text classification: this model assigns one or more labels to a whole text input.",
+        "ja": "テキスト分類: 文章全体に対してラベルを付ける用途です。"
+      }
+    },
+    "question-answering": {
+      "description": {
+        "en": "Question answering: this model extracts or generates answers from provided context.",
+        "ja": "質問応答: 与えられた文脈から答えを抽出したり生成したりする用途です。"
+      }
+    },
+    "summarization": {
+      "description": {
+        "en": "Summarization: this model condenses longer text into a shorter summary.",
+        "ja": "要約: 長い文章を短くまとめる用途です。"
+      }
+    },
+    "translation": {
+      "description": {
+        "en": "Translation: this model translates text from one language to another.",
+        "ja": "翻訳: ある言語の文章を別の言語へ翻訳する用途です。"
+      }
+    },
+    "zero-shot-classification": {
+      "description": {
+        "en": "Zero-shot classification: this model assigns labels to text using candidate labels provided at inference time, without task-specific fine-tuning.",
+        "ja": "ゼロショット分類: 推論時に与えた候補ラベルを使って、専用追加学習なしで文章を分類する用途です。"
+      }
+    },
+    "text-ranking": {
+      "description": {
+        "en": "Text ranking: this model scores or orders texts by relevance, often for search or retrieval.",
+        "ja": "テキスト順位付け: 検索や検索拡張生成向けに、文章や候補文を関連度で並べる用途です。"
+      }
+    },
+    "text-retrieval": {
+      "description": {
+        "en": "Text retrieval: this model helps find relevant passages or documents for a query.",
+        "ja": "テキスト検索: クエリに関連する文章や文書を見つける用途です。"
+      }
+    },
+    "table-question-answering": {
+      "description": {
+        "en": "Table question answering: this model answers questions from tabular data.",
+        "ja": "表データ応答: 表データを読んで質問に答える用途です。"
+      }
+    },
+    "visual-question-answering": {
+      "description": {
+        "en": "Visual question answering: this model answers questions about an image.",
+        "ja": "画像データ応答: 画像の内容について質問に答える用途です。"
+      }
+    },
+    "document-question-answering": {
+      "description": {
+        "en": "Document question answering: this model answers questions using document pages or scanned layouts as context.",
+        "ja": "文書画像応答: 文書ページやスキャンレイアウトを文脈として質問に答える用途です。"
+      }
+    },
+    "image-text-to-text": {
+      "description": {
+        "en": "Image-text-to-text: this model takes images and text together, then generates a text response.",
+        "ja": "画像＋テキスト＝テキスト生成: 画像とテキストをまとめて入力し、文章を生成する用途です。"
+      }
+    },
+    "conversational": {
+      "description": {
+        "en": "Conversational: this model is intended for multi-turn chat or assistant-style interactions.",
+        "ja": "会話: 複数ターンのチャットやアシスタント用途を想定したモデルです。"
+      }
+    }
+    ,
+    "any-to-any": {
+      "description": {
+        "en": "Any-to-any: this model can transform across multiple input and output modalities such as text, image, audio, or video.",
+        "ja": "Any-to-Any: テキスト、画像、音声、動画など複数の入出力モダリティをまたいで変換する用途です。"
+      }
+    },
+    "audio-text-to-text": {
+      "description": {
+        "en": "Audio-text-to-text: this model takes audio and text together, then generates a text response.",
+        "ja": "音声＋テキスト＝テキスト生成: 音声とテキストを入力し、文章を生成する用途です。"
+      }
+    },
+    "visual-document-retrieval": {
+      "description": {
+        "en": "Visual document retrieval: this model retrieves relevant document pages or regions using visual and layout cues.",
+        "ja": "視覚文書検索: 文書画像やレイアウト情報を使って関連するページや領域を見つける用途です。"
+      }
+    },
+    "image-text-to-image": {
+      "description": {
+        "en": "Image-text-to-image: this model uses an image and text prompt together to generate or edit an image.",
+        "ja": "画像＋テキスト＝画像生成: 画像とテキスト指示を使って画像を生成または編集する用途です。"
+      }
+    },
+    "image-text-to-video": {
+      "description": {
+        "en": "Image-text-to-video: this model uses image and text inputs together to generate a video.",
+        "ja": "画像＋テキスト＝動画生成: 画像とテキストを組み合わせて動画を生成する用途です。"
+      }
+    },
+    "video-text-to-text": {
+      "description": {
+        "en": "Video-text-to-text: this model takes video and text as input, then generates a text response.",
+        "ja": "動画＋テキスト＝テキスト生成: 動画とテキストを入力し、文章を生成する用途です。"
+      }
+    },
+    "depth-estimation": {
+      "description": {
+        "en": "Depth estimation: this model predicts scene depth or distance information from images.",
+        "ja": "深度推定: 画像から奥行きや距離情報を推定する用途です。"
+      }
+    },
+    "image-classification": {
+      "description": {
+        "en": "Image classification: this model assigns one or more labels to an image.",
+        "ja": "画像分類: 画像全体に対してラベルを付ける用途です。"
+      }
+    },
+    "image-feature-extraction": {
+      "description": {
+        "en": "Image feature extraction: this model converts images into embeddings or feature vectors for retrieval or downstream tasks.",
+        "ja": "画像特徴抽出: 画像をベクトル表現へ変換し、検索や下流タスクに使う用途です。"
+      }
+    },
+    "image-segmentation": {
+      "description": {
+        "en": "Image segmentation: this model separates an image into regions or masks.",
+        "ja": "画像セグメンテーション: 画像を領域やマスクに分割する用途です。"
+      }
+    },
+    "image-to-image": {
+      "description": {
+        "en": "Image-to-image: this model transforms one image into another image.",
+        "ja": "画像＝画像変換: 入力画像を別の画像へ変換する用途です。"
+      }
+    },
+    "image-to-text": {
+      "description": {
+        "en": "Image-to-text: this model generates text descriptions or extracted text from an image.",
+        "ja": "画像＝テキスト生成: 画像の説明文や画像内テキストを出力する用途です。"
+      }
+    },
+    "image-to-video": {
+      "description": {
+        "en": "Image-to-video: this model generates a video from an image input.",
+        "ja": "画像＝動画生成: 画像をもとに動画を生成する用途です。"
+      }
+    },
+    "keypoint-detection": {
+      "description": {
+        "en": "Keypoint detection: this model detects structured keypoints such as joints, landmarks, or reference points.",
+        "ja": "キーポイント検出: 関節やランドマークなどの基準点を検出する用途です。"
+      }
+    },
+    "mask-generation": {
+      "description": {
+        "en": "Mask generation: this model generates masks that isolate objects or regions in an image.",
+        "ja": "マスク生成: 画像内の対象や領域を切り出すマスクを生成する用途です。"
+      }
+    },
+    "object-detection": {
+      "description": {
+        "en": "Object detection: this model detects and localizes objects in an image.",
+        "ja": "物体検出: 画像内の物体を見つけて位置を特定する用途です。"
+      }
+    },
+    "video-classification": {
+      "description": {
+        "en": "Video classification: this model assigns labels to a video clip.",
+        "ja": "動画分類: 動画クリップ全体にラベルを付ける用途です。"
+      }
+    },
+    "text-to-image": {
+      "description": {
+        "en": "Text-to-image: this model generates images from text prompts.",
+        "ja": "テキスト＝画像生成: テキスト指示から画像を生成する用途です。"
+      }
+    },
+    "text-to-video": {
+      "description": {
+        "en": "Text-to-video: this model generates videos from text prompts.",
+        "ja": "テキスト＝動画生成: テキスト指示から動画を生成する用途です。"
+      }
+    },
+    "unconditional-image-generation": {
+      "description": {
+        "en": "Unconditional image generation: this model generates images without relying on a text prompt.",
+        "ja": "無条件画像生成: テキスト指示なしで画像を生成する用途です。"
+      }
+    },
+    "video-to-video": {
+      "description": {
+        "en": "Video-to-video: this model transforms one video into another video.",
+        "ja": "動画＝動画変換: 入力動画を別の動画へ変換する用途です。"
+      }
+    },
+    "zero-shot-image-classification": {
+      "description": {
+        "en": "Zero-shot image classification: this model classifies images using candidate labels without task-specific fine-tuning.",
+        "ja": "ゼロショット画像分類: 専用追加学習なしで候補ラベルを使って画像を分類する用途です。"
+      }
+    },
+    "zero-shot-object-detection": {
+      "description": {
+        "en": "Zero-shot object detection: this model detects objects from open-ended text labels without task-specific fine-tuning.",
+        "ja": "ゼロショット物体検出: 専用追加学習なしで自由なテキストラベルに基づいて物体を検出する用途です。"
+      }
+    },
+    "text-to-3d": {
+      "description": {
+        "en": "Text-to-3D: this model generates 3D content from text prompts.",
+        "ja": "テキスト＝3D生成: テキスト指示から3Dコンテンツを生成する用途です。"
+      }
+    },
+    "image-to-3d": {
+      "description": {
+        "en": "Image-to-3D: this model generates 3D content from image input.",
+        "ja": "画像＝3D生成: 画像をもとに3Dコンテンツを生成する用途です。"
+      }
+    },
+    "audio-classification": {
+      "description": {
+        "en": "Audio classification: this model assigns labels to an audio clip.",
+        "ja": "音声分類: 音声クリップにラベルを付ける用途です。"
+      }
+    },
+    "audio-to-audio": {
+      "description": {
+        "en": "Audio-to-audio: this model transforms one audio signal into another audio output.",
+        "ja": "音声＝音声変換: 入力音声を別の音声へ変換する用途です。"
+      }
+    },
+    "automatic-speech-recognition": {
+      "description": {
+        "en": "Automatic speech recognition: this model transcribes spoken audio into text.",
+        "ja": "音声認識: 音声をテキストへ書き起こす用途です。"
+      }
+    },
+    "text-to-speech": {
+      "description": {
+        "en": "Text-to-speech: this model synthesizes spoken audio from text.",
+        "ja": "テキスト読み上げ: テキストから音声を合成する用途です。"
+      }
+    },
+    "tabular-classification": {
+      "description": {
+        "en": "Tabular classification: this model predicts categorical labels from structured table data.",
+        "ja": "表データ分類: 構造化された表データからカテゴリラベルを予測する用途です。"
+      }
+    },
+    "tabular-regression": {
+      "description": {
+        "en": "Tabular regression: this model predicts continuous values from structured table data.",
+        "ja": "表データ回帰: 構造化された表データから連続値を予測する用途です。"
+      }
+    },
+    "reinforcement-learning": {
+      "description": {
+        "en": "Reinforcement learning: this model or policy is trained to act through reward-driven interaction with an environment.",
+        "ja": "強化学習: 環境との相互作用と報酬を通じて行動方策を学習する用途です。"
+      }
+    }
+  },
+  "licenses": {
+    "apache-2.0": {
+      "name": "Apache license 2.0",
+      "description": {
+        "en": "Apache license 2.0: a permissive license that generally allows reuse, modification, distribution, and commercial use, while requiring attribution and preservation of license notices.",
+        "ja": "Apache license 2.0: 比較的制約の少ないライセンスで、再利用・改変・配布・商用利用がしやすい一方、著作権表示やライセンス表記の保持が必要です。"
+      }
+    },
+    "mit": {
+      "name": "MIT",
+      "description": {
+        "en": "MIT: a highly permissive license that generally allows reuse, modification, distribution, and commercial use with attribution.",
+        "ja": "MIT: 非常に制約の少ないライセンスで、再利用・改変・配布・商用利用がしやすく、著作権表示の保持が主な条件です。"
+      }
+    },
+    "openrail": {
+      "name": "OpenRAIL license family",
+      "description": {
+        "en": "OpenRAIL license family: generally open for use, but may include additional use restrictions or behavioral conditions.",
+        "ja": "OpenRAIL license family: オープン利用を認めつつ、用途や振る舞いに関する追加条件が付く場合があります。"
+      }
+    },
+    "bigscience-openrail-m": {
+      "name": "BigScience OpenRAIL-M",
+      "description": {
+        "en": "BigScience OpenRAIL-M: generally allows use and redistribution of the model, subject to attribution and additional responsible-use restrictions in the license text.",
+        "ja": "BigScience OpenRAIL-M: モデルの利用や再配布を概ね認める一方、出典表示や責任ある利用に関する追加条件が本文で定められるライセンスです。"
+      }
+    },
+    "creativeml-openrail-m": {
+      "name": "CreativeML OpenRAIL-M",
+      "description": {
+        "en": "CreativeML OpenRAIL-M: generally allows use, modification, and redistribution of the model, while imposing additional usage restrictions defined in the license text.",
+        "ja": "CreativeML OpenRAIL-M: モデルの利用・改変・再配布を概ね認めつつ、本文で定められた追加の利用制限が課されるライセンスです。"
+      }
+    },
+    "bigscience-bloom-rail-1.0": {
+      "name": "BigScience BLOOM RAIL 1.0",
+      "description": {
+        "en": "BigScience BLOOM RAIL 1.0: allows access and use of the model under responsible-AI conditions and additional restrictions described in the license text.",
+        "ja": "BigScience BLOOM RAIL 1.0: 責任あるAI利用の条件や追加制限を伴いつつ、モデルの利用を認めるライセンスです。"
+      }
+    },
+    "bigcode-openrail-m": {
+      "name": "BigCode Open RAIL-M v1",
+      "description": {
+        "en": "BigCode Open RAIL-M v1: generally allows use and redistribution of the model, with additional restrictions and obligations defined in the license text.",
+        "ja": "BigCode Open RAIL-M v1: モデルの利用や再配布を概ね認めますが、本文で定められた追加制限や義務があります。"
+      }
+    },
+    "afl-3.0": {
+      "name": "Academic Free License v3.0",
+      "description": {
+        "en": "Academic Free License v3.0: a permissive open source license that generally allows reuse, modification, distribution, and commercial use with notice and attribution requirements.",
+        "ja": "Academic Free License v3.0: 比較的制約の少ないオープンソースライセンスで、告知や著作権表示を条件に再利用・改変・配布・商用利用が概ね可能です。"
+      }
+    },
+    "artistic-2.0": {
+      "name": "Artistic license 2.0",
+      "description": {
+        "en": "Artistic license 2.0: allows redistribution and modification, with conditions intended to preserve clarity about what is the original work and what has been changed.",
+        "ja": "Artistic license 2.0: 再配布や改変を認めつつ、元の作品と改変部分の区別が分かるようにすることを重視するライセンスです。"
+      }
+    },
+    "bsl-1.0": {
+      "name": "Boost Software License 1.0",
+      "description": {
+        "en": "Boost Software License 1.0: a permissive license that generally allows reuse, modification, distribution, and commercial use with minimal notice requirements.",
+        "ja": "Boost Software License 1.0: 非常に制約の少ないライセンスで、最小限の表示条件のもと再利用・改変・配布・商用利用が概ね可能です。"
+      }
+    },
+    "bsd": {
+      "name": "BSD license family",
+      "description": {
+        "en": "BSD license family: a family of permissive licenses that generally allow reuse and redistribution with attribution and disclaimer requirements.",
+        "ja": "BSD license family: 比較的制約の少ないライセンス群で、著作権表示や無保証条項の保持を条件に再利用・再配布が概ね可能です。"
+      }
+    },
+    "bsd-2-clause": {
+      "name": "BSD 2-clause 'Simplified' license",
+      "description": {
+        "en": "BSD 2-clause “Simplified” license: a permissive license that generally allows reuse and redistribution with preservation of copyright and disclaimer notices.",
+        "ja": "BSD 2-clause “Simplified” license: 著作権表示と無保証条項の保持を条件に、再利用・再配布を広く認めるライセンスです。"
+      }
+    },
+    "bsd-3-clause": {
+      "name": "BSD 3-clause 'New' or 'Revised' license",
+      "description": {
+        "en": "BSD 3-clause: a permissive license that generally allows reuse and redistribution with attribution and disclaimer requirements.",
+        "ja": "BSD 3-clause: 比較的制約の少ないライセンスで、著作権表示の保持と無保証条項の確認が必要です。"
+      }
+    },
+    "bsd-3-clause-clear": {
+      "name": "BSD 3-clause Clear license",
+      "description": {
+        "en": "BSD 3-clause Clear license: a permissive BSD-style license similar to BSD-3-Clause, with attribution and disclaimer requirements.",
+        "ja": "BSD 3-clause Clear license: BSD-3-Clause に近い比較的制約の少ないライセンスで、著作権表示や無保証条項の保持が必要です。"
+      }
+    },
+    "c-uda": {
+      "name": "Computational Use of Data Agreement",
+      "description": {
+        "en": "Computational Use of Data Agreement: a data-focused agreement that may allow computational use while imposing restrictions on other forms of access, reuse, or redistribution. Review the full terms carefully.",
+        "ja": "Computational Use of Data Agreement: 計算利用を認めつつ、閲覧・再利用・再配布などに別途制限が課されることがあるデータ向け契約です。本文確認が必要です。"
+      }
+    },
+    "cc": {
+      "name": "Creative Commons license family",
+      "description": {
+        "en": "Creative Commons license family: a family of content licenses that allow reuse under combinations of attribution, share-alike, noncommercial, or no-derivatives conditions.",
+        "ja": "Creative Commons license family: 出典表示、継承、非営利、改変禁止などの条件を組み合わせて再利用条件を定めるコンテンツ向けライセンス群です。"
+      }
+    },
+    "cc0-1.0": {
+      "name": "Creative Commons Zero v1.0 Universal",
+      "description": {
+        "en": "Creative Commons Zero v1.0 Universal: a public-domain dedication tool intended to waive rights as broadly as possible, allowing reuse with minimal restrictions.",
+        "ja": "Creative Commons Zero v1.0 Universal: 権利放棄をできる限り広く行うことを意図した仕組みで、極めて少ない制約で再利用しやすくするものです。"
+      }
+    },
+    "cc-by-2.0": {
+      "name": "Creative Commons Attribution 2.0",
+      "description": {
+        "en": "Creative Commons Attribution 2.0: reuse, redistribution, and adaptation are generally allowed, including commercial use, as long as attribution is provided.",
+        "ja": "Creative Commons Attribution 2.0: 出典表示を条件に、再利用・再配布・改変が広く認められ、商用利用も概ね可能です。"
+      }
+    },
+    "cc-by-2.5": {
+      "name": "Creative Commons Attribution 2.5",
+      "description": {
+        "en": "Creative Commons Attribution 2.5: reuse, redistribution, and adaptation are generally allowed, including commercial use, as long as attribution is provided.",
+        "ja": "Creative Commons Attribution 2.5: 出典表示を条件に、再利用・再配布・改変が広く認められ、商用利用も概ね可能です。"
+      }
+    },
+    "cc-by-3.0": {
+      "name": "Creative Commons Attribution 3.0",
+      "description": {
+        "en": "Creative Commons Attribution 3.0: reuse, redistribution, and adaptation are generally allowed, including commercial use, as long as attribution is provided.",
+        "ja": "Creative Commons Attribution 3.0: 出典表示を条件に、再利用・再配布・改変が広く認められ、商用利用も概ね可能です。"
+      }
+    },
+    "cc-by-4.0": {
+      "name": "Creative Commons Attribution 4.0",
+      "description": {
+        "en": "Creative Commons Attribution 4.0: reuse is generally allowed as long as appropriate attribution is provided.",
+        "ja": "Creative Commons Attribution 4.0: 出典表示を行えば再利用しやすいライセンスです。"
+      }
+    },
+    "cc-by-sa-3.0": {
+      "name": "Creative Commons Attribution Share Alike 3.0",
+      "description": {
+        "en": "Creative Commons Attribution Share Alike 3.0: attribution is required, commercial use is generally allowed, and adaptations must be shared under the same or a compatible license.",
+        "ja": "Creative Commons Attribution Share Alike 3.0: 出典表示が必要で、商用利用も概ね可能ですが、改変物は同じまたは互換性のあるライセンスで共有する必要があります。"
+      }
+    },
+    "cc-by-sa-4.0": {
+      "name": "Creative Commons Attribution Share Alike 4.0",
+      "description": {
+        "en": "Creative Commons Attribution Share Alike 4.0: attribution is required and derivatives must be shared under the same license.",
+        "ja": "Creative Commons Attribution Share Alike 4.0: 出典表示が必要で、派生物も同じライセンスで公開する必要があります。"
+      }
+    },
+    "cc-by-nc-2.0": {
+      "name": "Creative Commons Attribution Non Commercial 2.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial 2.0: attribution is required and reuse, redistribution, and adaptation are generally limited to noncommercial purposes.",
+        "ja": "Creative Commons Attribution Non Commercial 2.0: 出典表示が必要で、再利用・再配布・改変は原則として非商用目的に限られます。"
+      }
+    },
+    "cc-by-nc-3.0": {
+      "name": "Creative Commons Attribution Non Commercial 3.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial 3.0: attribution is required and reuse, redistribution, and adaptation are generally limited to noncommercial purposes.",
+        "ja": "Creative Commons Attribution Non Commercial 3.0: 出典表示が必要で、再利用・再配布・改変は原則として非商用目的に限られます。"
+      }
+    },
+    "cc-by-nc-4.0": {
+      "name": "Creative Commons Attribution Non Commercial 4.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial 4.0: attribution is required and commercial use is restricted.",
+        "ja": "Creative Commons Attribution Non Commercial 4.0: 出典表示が必要で、商用利用には制限があります。"
+      }
+    },
+    "cc-by-nd-4.0": {
+      "name": "Creative Commons Attribution No Derivatives 4.0",
+      "description": {
+        "en": "Creative Commons Attribution No Derivatives 4.0: attribution is required and redistribution is generally allowed, including commercial use, but sharing adapted versions is not permitted.",
+        "ja": "Creative Commons Attribution No Derivatives 4.0: 出典表示が必要で、再配布は商用を含めて概ね可能ですが、改変物の共有は認められません。"
+      }
+    },
+    "cc-by-nc-nd-3.0": {
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 3.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial No Derivatives 3.0: attribution is required; reuse is limited to noncommercial redistribution of the unadapted material.",
+        "ja": "Creative Commons Attribution Non Commercial No Derivatives 3.0: 出典表示が必要で、非商用かつ無改変での再配布に限って利用が認められるライセンスです。"
+      }
+    },
+    "cc-by-nc-nd-4.0": {
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial No Derivatives 4.0: attribution is required; reuse is limited to noncommercial redistribution of the unadapted material.",
+        "ja": "Creative Commons Attribution Non Commercial No Derivatives 4.0: 出典表示が必要で、非商用かつ無改変での再配布に限って利用が認められるライセンスです。"
+      }
+    },
+    "cc-by-nc-sa-2.0": {
+      "name": "Creative Commons Attribution Non Commercial Share Alike 2.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial Share Alike 2.0: attribution is required; use is limited to noncommercial purposes, and adaptations must be shared under the same or a compatible license.",
+        "ja": "Creative Commons Attribution Non Commercial Share Alike 2.0: 出典表示が必要で、非商用利用に限られ、改変物は同じまたは互換性のあるライセンスで共有する必要があります。"
+      }
+    },
+    "cc-by-nc-sa-3.0": {
+      "name": "Creative Commons Attribution Non Commercial Share Alike 3.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial Share Alike 3.0: attribution is required; use is limited to noncommercial purposes, and adaptations must be shared under the same or a compatible license.",
+        "ja": "Creative Commons Attribution Non Commercial Share Alike 3.0: 出典表示が必要で、非商用利用に限られ、改変物は同じまたは互換性のあるライセンスで共有する必要があります。"
+      }
+    },
+    "cc-by-nc-sa-4.0": {
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0",
+      "description": {
+        "en": "Creative Commons Attribution Non Commercial Share Alike 4.0: attribution is required; use is limited to noncommercial purposes, and adaptations must be shared under the same or a compatible license.",
+        "ja": "Creative Commons Attribution Non Commercial Share Alike 4.0: 出典表示が必要で、非商用利用に限られ、改変物は同じまたは互換性のあるライセンスで共有する必要があります。"
+      }
+    },
+    "cdla-sharing-1.0": {
+      "name": "Community Data License Agreement - Sharing, Version 1.0",
+      "description": {
+        "en": "Community Data License Agreement – Sharing, Version 1.0: a data license that generally allows sharing and use of data, subject to attribution and data-specific conditions in the license text.",
+        "ja": "Community Data License Agreement - Sharing, Version 1.0: データの共有や利用を概ね認める一方、出典表示やデータ特有の条件が本文で定められるライセンスです。"
+      }
+    },
+    "cdla-permissive-1.0": {
+      "name": "Community Data License Agreement - Permissive, Version 1.0",
+      "description": {
+        "en": "Community Data License Agreement – Permissive, Version 1.0: a permissive data license that generally allows use, modification, and sharing with attribution and notice obligations.",
+        "ja": "Community Data License Agreement - Permissive, Version 1.0: 比較的制約の少ないデータ向けライセンスで、出典表示や告知を条件に利用・改変・共有が概ね可能です。"
+      }
+    },
+    "cdla-permissive-2.0": {
+      "name": "Community Data License Agreement - Permissive, Version 2.0",
+      "description": {
+        "en": "Community Data License Agreement – Permissive, Version 2.0: a permissive data license that generally allows use, modification, and sharing with attribution and notice obligations.",
+        "ja": "Community Data License Agreement - Permissive, Version 2.0: 比較的制約の少ないデータ向けライセンスで、出典表示や告知を条件に利用・改変・共有が概ね可能です。"
+      }
+    },
+    "wtfpl": {
+      "name": "Do What The F*ck You Want To Public License",
+      "description": {
+        "en": "Do What The F*ck You Want To Public License: an extremely permissive license intended to allow almost unrestricted use, modification, and redistribution.",
+        "ja": "Do What The F*ck You Want To Public License: ほぼ無制限の利用・改変・再配布を意図した、極めて制約の少ないライセンスです。"
+      }
+    },
+    "ecl-2.0": {
+      "name": "Educational Community License v2.0",
+      "description": {
+        "en": "Educational Community License v2.0: an open source license closely related to Apache-2.0, generally allowing reuse, modification, distribution, and commercial use with notice requirements.",
+        "ja": "Educational Community License v2.0: Apache-2.0 に近いオープンソースライセンスで、告知義務のもと再利用・改変・配布・商用利用が概ね可能です。"
+      }
+    },
+    "epl-1.0": {
+      "name": "Eclipse Public License 1.0",
+      "description": {
+        "en": "Eclipse Public License 1.0: an open source license that allows commercial use and redistribution, while imposing source-sharing obligations for certain modified components.",
+        "ja": "Eclipse Public License 1.0: 商用利用や再配布を認めつつ、特定の改変部分についてソース開示義務が生じることがあるライセンスです。"
+      }
+    },
+    "epl-2.0": {
+      "name": "Eclipse Public License 2.0",
+      "description": {
+        "en": "Eclipse Public License 2.0: an open source license that allows commercial use and redistribution, while imposing source-sharing obligations for certain modified components.",
+        "ja": "Eclipse Public License 2.0: 商用利用や再配布を認めつつ、特定の改変部分についてソース開示義務が生じることがあるライセンスです。"
+      }
+    },
+    "etalab-2.0": {
+      "name": "Etalab Open License 2.0",
+      "description": {
+        "en": "Etalab Open License 2.0: a French open data license that generally allows reuse, modification, and redistribution with attribution.",
+        "ja": "Etalab Open License 2.0: フランスのオープンデータ向けライセンスで、出典表示を条件に再利用・改変・再配布を概ね認めます。"
+      }
+    },
+    "eupl-1.1": {
+      "name": "European Union Public License 1.1",
+      "description": {
+        "en": "European Union Public License 1.1: a copyleft open source license that generally allows reuse and redistribution, with reciprocity obligations for derivatives.",
+        "ja": "European Union Public License 1.1: コピーレフト型のオープンソースライセンスで、派生物に一定の継承義務を課しつつ再利用・再配布を認めます。"
+      }
+    },
+    "eupl-1.2": {
+      "name": "European Union Public License 1.2",
+      "description": {
+        "en": "European Union Public License 1.2: a copyleft open source license that generally allows reuse and redistribution, with reciprocity obligations for derivatives.",
+        "ja": "European Union Public License 1.2: コピーレフト型のオープンソースライセンスで、派生物に一定の継承義務を課しつつ再利用・再配布を認めます。"
+      }
+    },
+    "agpl-3.0": {
+      "name": "GNU Affero General Public License v3.0",
+      "description": {
+        "en": "GNU Affero General Public License v3.0: a strong copyleft license that generally allows reuse and redistribution, but requires source disclosure for modified versions, including software used over a network.",
+        "ja": "GNU Affero General Public License v3.0: 強いコピーレフト型ライセンスで、再利用・再配布を認める一方、ネットワーク越しに提供する改変版にもソース開示義務が及ぶことがあります。"
+      }
+    },
+    "gfdl": {
+      "name": "GNU Free Documentation License family",
+      "description": {
+        "en": "GNU Free Documentation License family: a copyleft license family for documentation that generally allows copying and redistribution under share-alike style conditions.",
+        "ja": "GNU Free Documentation License family: 文書向けのコピーレフト型ライセンス群で、継承条件のもと複製・再配布を概ね認めます。"
+      }
+    },
+    "gpl": {
+      "name": "GNU General Public License family",
+      "description": {
+        "en": "GNU General Public License family: a strong copyleft license family that generally allows reuse and redistribution, provided derivative software is distributed under the same license terms.",
+        "ja": "GNU General Public License family: 強いコピーレフト型ライセンス群で、派生ソフトウェアを同じ条件で配布することを求めます。"
+      }
+    },
+    "gpl-2.0": {
+      "name": "GNU General Public License v2.0",
+      "description": {
+        "en": "GNU General Public License v2.0: a strong copyleft license that generally allows reuse and redistribution, provided derivative software is distributed under the same license terms.",
+        "ja": "GNU General Public License v2.0: 強いコピーレフト型ライセンスで、派生ソフトウェアを同じ条件で配布することを求めます。"
+      }
+    },
+    "gpl-3.0": {
+      "name": "GNU General Public License v3.0",
+      "description": {
+        "en": "GNU General Public License v3.0: a strong copyleft license that generally allows reuse and redistribution, provided derivative software is distributed under the same license terms.",
+        "ja": "GNU General Public License v3.0: 強いコピーレフト型ライセンスで、派生ソフトウェアを同じ条件で配布することを求めます。"
+      }
+    },
+    "lgpl": {
+      "name": "GNU Lesser General Public License family",
+      "description": {
+        "en": "GNU Lesser General Public License family: a weak copyleft license family that generally allows linking from proprietary software, while requiring disclosure of modifications to the LGPL-covered components.",
+        "ja": "GNU Lesser General Public License family: 弱いコピーレフト型ライセンス群で、LGPL対象部分への改変には開示義務が及ぶ一方、一定条件下でプロプライエタリソフトからのリンクを認めます。"
+      }
+    },
+    "lgpl-2.1": {
+      "name": "GNU Lesser General Public License v2.1",
+      "description": {
+        "en": "GNU Lesser General Public License v2.1: a weak copyleft license that generally allows linking from proprietary software, while requiring disclosure of modifications to the LGPL-covered components.",
+        "ja": "GNU Lesser General Public License v2.1: 弱いコピーレフト型ライセンスで、LGPL対象部分への改変には開示義務が及ぶ一方、一定条件下でプロプライエタリソフトからのリンクを認めます。"
+      }
+    },
+    "lgpl-3.0": {
+      "name": "GNU Lesser General Public License v3.0",
+      "description": {
+        "en": "GNU Lesser General Public License v3.0: a weak copyleft license that generally allows linking from proprietary software, while requiring disclosure of modifications to the LGPL-covered components.",
+        "ja": "GNU Lesser General Public License v3.0: 弱いコピーレフト型ライセンスで、LGPL対象部分への改変には開示義務が及ぶ一方、一定条件下でプロプライエタリソフトからのリンクを認めます。"
+      }
+    },
+    "isc": {
+      "name": "ISC",
+      "description": {
+        "en": "ISC: a short permissive license broadly similar to MIT/BSD, generally allowing reuse, modification, distribution, and commercial use with notice retention.",
+        "ja": "ISC: MIT/BSD系に近い簡潔なライセンスで、表示保持を条件に再利用・改変・配布・商用利用が概ね可能です。"
+      }
+    },
+    "h-research": {
+      "name": "H Research License",
+      "description": {
+        "en": "H Research License: a research-oriented license with provider-specific terms. Review the full text before redistribution or commercial use.",
+        "ja": "H Research License: 研究利用向けの個別ライセンスです。再配布や商用利用の前に本文確認が必要です。"
+      }
+    },
+    "intel-research": {
+      "name": "Intel Research Use License Agreement",
+      "description": {
+        "en": "Intel Research Use License Agreement: a research-use license with Intel-specific restrictions, so review the full terms before broader use or redistribution.",
+        "ja": "Intel Research Use License Agreement: Intel 独自条件を含む研究利用向けライセンスであり、広い利用や再配布の前に本文確認が必要です。"
+      }
+    },
+    "lppl-1.3c": {
+      "name": "LaTeX Project Public License v1.3c",
+      "description": {
+        "en": "LaTeX Project Public License v1.3c: a license commonly used for LaTeX packages, allowing redistribution and modification under conditions intended to preserve package identity and maintenance clarity.",
+        "ja": "LaTeX Project Public License v1.3c: LaTeX パッケージでよく使われるライセンスで、パッケージの同一性や保守責任の明確化を重視しつつ再配布・改変を認めます。"
+      }
+    },
+    "ms-pl": {
+      "name": "Microsoft Public License",
+      "description": {
+        "en": "Microsoft Public License: an open source license that generally allows reuse, modification, and distribution, including commercial use, with notice requirements.",
+        "ja": "Microsoft Public License: 告知義務のもと、再利用・改変・配布・商用利用を概ね認めるオープンソースライセンスです。"
+      }
+    },
+    "apple-ascl": {
+      "name": "Apple Sample Code license",
+      "description": {
+        "en": "Apple Sample Code license: an Apple-specific license for sample code. Review the full text before redistribution or production use.",
+        "ja": "Apple Sample Code license: Apple のサンプルコード向け個別ライセンスです。再配布や本番利用の前に本文確認が必要です。"
+      }
+    },
+    "apple-amlr": {
+      "name": "Apple Model License for Research",
+      "description": {
+        "en": "Apple Model License for Research: an Apple-specific license for research use of models, with provider-specific terms that should be reviewed carefully.",
+        "ja": "Apple Model License for Research: モデルの研究利用向け Apple 独自ライセンスで、個別条件の本文確認が必要です。"
+      }
+    },
+    "mpl-2.0": {
+      "name": "Mozilla Public License 2.0",
+      "description": {
+        "en": "Mozilla Public License 2.0: a file-level copyleft license that generally allows commercial use and redistribution, while requiring modified covered files to remain under MPL.",
+        "ja": "Mozilla Public License 2.0: ファイル単位のコピーレフト型ライセンスで、商用利用や再配布を認めつつ、改変した対象ファイルには MPL を維持する必要があります。"
+      }
+    },
+    "odc-by": {
+      "name": "Open Data Commons License Attribution family",
+      "description": {
+        "en": "Open Data Commons License Attribution family: data licenses that generally allow use and sharing of databases with attribution requirements.",
+        "ja": "Open Data Commons License Attribution family: 出典表示を条件に、データベースの利用や共有を概ね認めるライセンス群です。"
+      }
+    },
+    "odbl": {
+      "name": "Open Database License family",
+      "description": {
+        "en": "Open Database License family: copyleft-style database licenses that generally allow use and sharing of databases, while requiring attribution and share-alike for public derivatives in many cases.",
+        "ja": "Open Database License family: データベース向けのコピーレフト型ライセンス群で、出典表示や継承条件のもと利用・共有を概ね認めます。"
+      }
+    },
+    "openmdw-1.0": {
+      "name": "Open Model, Data & Weights License Agreement",
+      "description": {
+        "en": "Open Model, Data & Weights License Agreement: a license intended for models, datasets, and weights, with terms defined in the agreement text. Review the full license before redistribution or commercial use.",
+        "ja": "Open Model, Data & Weights License Agreement: モデル・データ・重み向けのライセンスで、具体的条件は本文で定められます。再配布や商用利用前に確認が必要です。"
+      }
+    },
+    "openrail++": {
+      "name": "Open Rail++-M License",
+      "description": {
+        "en": "Open Rail++-M License: an RAIL-style model license that generally allows use while imposing additional responsible-use restrictions.",
+        "ja": "Open Rail++-M License: RAIL系のモデルライセンスで、利用を認めつつ責任ある利用に関する追加制限を課すことがあります。"
+      }
+    },
+    "osl-3.0": {
+      "name": "Open Software License 3.0",
+      "description": {
+        "en": "Open Software License 3.0: a copyleft open source license that generally allows reuse and redistribution, while imposing reciprocity obligations on derivatives.",
+        "ja": "Open Software License 3.0: コピーレフト型のオープンソースライセンスで、派生物に継承義務を課しつつ再利用・再配布を認めます。"
+      }
+    },
+    "postgresql": {
+      "name": "PostgreSQL License",
+      "description": {
+        "en": "PostgreSQL License: a permissive BSD-style license that generally allows reuse, modification, distribution, and commercial use with minimal notice requirements.",
+        "ja": "PostgreSQL License: BSD系の比較的制約の少ないライセンスで、最小限の表示条件のもと再利用・改変・配布・商用利用が概ね可能です。"
+      }
+    },
+    "ofl-1.1": {
+      "name": "SIL Open Font License 1.1",
+      "description": {
+        "en": "SIL Open Font License 1.1: a font license that generally allows use, embedding, modification, and redistribution, while reserving certain naming conditions for modified fonts.",
+        "ja": "SIL Open Font License 1.1: フォント向けライセンスで、利用・埋め込み・改変・再配布を概ね認めつつ、改変フォント名に一定の条件を課します。"
+      }
+    },
+    "ncsa": {
+      "name": "University of Illinois/NCSA Open Source License",
+      "description": {
+        "en": "University of Illinois/NCSA Open Source License: a permissive open source license that generally allows reuse, modification, distribution, and commercial use with attribution and disclaimer requirements.",
+        "ja": "University of Illinois/NCSA Open Source License: 著作権表示と無保証条項の保持を条件に、再利用・改変・配布・商用利用を概ね認めるライセンスです。"
+      }
+    },
+    "unlicense": {
+      "name": "The Unlicense",
+      "description": {
+        "en": "The Unlicense: a public-domain style dedication intended to allow nearly unrestricted reuse, modification, distribution, and commercial use.",
+        "ja": "The Unlicense: できる限り制約なく再利用・改変・配布・商用利用できるようにする、公有化志向のライセンスです。"
+      }
+    },
+    "zlib": {
+      "name": "zLib License",
+      "description": {
+        "en": "zLib License: a short permissive license that generally allows reuse, modification, and redistribution with attribution and anti-misrepresentation requirements.",
+        "ja": "zLib License: 著作権表示の保持や出自の誤認防止を条件に、再利用・改変・再配布を広く認める簡潔なライセンスです。"
+      }
+    },
+    "pddl": {
+      "name": "Open Data Commons Public Domain Dedication and License",
+      "description": {
+        "en": "Open Data Commons Public Domain Dedication and License: a public-domain dedication tool for data and databases intended to maximize freedom of reuse.",
+        "ja": "Open Data Commons Public Domain Dedication and License: データやデータベースをできる限り自由に再利用できるようにする、公有化志向の仕組みです。"
+      }
+    },
+    "lgpl-lr": {
+      "name": "Lesser General Public License For Linguistic Resources",
+      "description": {
+        "en": "Lesser General Public License For Linguistic Resources: a linguistic-resource-focused weak copyleft license with terms similar in spirit to LGPL. Review the full text for exact obligations.",
+        "ja": "Lesser General Public License For Linguistic Resources: 言語資源向けの弱いコピーレフト型ライセンスで、趣旨は LGPL に近いですが、正確な義務は本文確認が必要です。"
+      }
+    },
+    "deepfloyd-if-license": {
+      "name": "DeepFloyd IF Research License Agreement",
+      "description": {
+        "en": "DeepFloyd IF Research License Agreement: a research-oriented license with provider-specific restrictions. Review the full text before broader use or redistribution.",
+        "ja": "DeepFloyd IF Research License Agreement: 研究利用向けの個別ライセンスで、広い利用や再配布の前に本文確認が必要です。"
+      }
+    },
+    "fair-noncommercial-research-license": {
+      "name": "FAIR Noncommercial Research License",
+      "description": {
+        "en": "FAIR Noncommercial Research License: a research-use license that generally restricts use to noncommercial research purposes.",
+        "ja": "FAIR Noncommercial Research License: 原則として非商用の研究目的に利用を限定するライセンスです。"
+      }
+    },
+    "llama2": {
+      "name": "Llama 2 Community License Agreement",
+      "description": {
+        "en": "Llama 2 Community License Agreement: Meta-specific terms apply, so review the full license before redistribution or commercial use.",
+        "ja": "Llama 2 Community License Agreement: Meta 独自の利用条件が適用されるため、配布や商用利用前に本文確認が必要です。"
+      }
+    },
+    "llama3": {
+      "name": "Llama 3 Community License Agreement",
+      "description": {
+        "en": "Llama 3 Community License Agreement: Meta-specific usage and redistribution terms apply.",
+        "ja": "Llama 3 Community License Agreement: Meta 独自の利用条件が適用されます。"
+      }
+    },
+    "llama3.1": {
+      "name": "Llama 3.1 Community License Agreement",
+      "description": {
+        "en": "Llama 3.1 Community License Agreement: Meta-specific usage and redistribution terms apply.",
+        "ja": "Llama 3.1 Community License Agreement: Meta 独自の利用条件が適用されます。"
+      }
+    },
+    "llama3.2": {
+      "name": "Llama 3.2 Community License Agreement",
+      "description": {
+        "en": "Llama 3.2 Community License Agreement: Meta-specific usage and redistribution terms apply.",
+        "ja": "Llama 3.2 Community License Agreement: Meta 独自の利用条件が適用されます。"
+      }
+    },
+    "llama3.3": {
+      "name": "Llama 3.3 Community License Agreement",
+      "description": {
+        "en": "Llama 3.3 Community License Agreement: Meta-specific usage and redistribution terms apply.",
+        "ja": "Llama 3.3 Community License Agreement: Meta 独自の利用条件が適用されます。"
+      }
+    },
+    "llama4": {
+      "name": "Llama 4 Community License Agreement",
+      "description": {
+        "en": "Llama 4 Community License Agreement: Meta-specific usage and redistribution terms apply.",
+        "ja": "Llama 4 Community License Agreement: Meta 独自の利用条件が適用されます。"
+      }
+    },
+    "grok2-community": {
+      "name": "Grok 2 Community License Agreement",
+      "description": {
+        "en": "Grok 2 Community License Agreement: provider-specific community terms apply, so review the full license before redistribution or commercial use.",
+        "ja": "Grok 2 Community License Agreement: 提供者独自のコミュニティ向け条件が適用されるため、再配布や商用利用前に本文確認が必要です。"
+      }
+    },
+    "gemma": {
+      "name": "Gemma Terms of Use",
+      "description": {
+        "en": "Gemma Terms of Use: Google-specific terms apply to use and redistribution of the model.",
+        "ja": "Gemma Terms of Use: Google 提供モデル向けの個別利用条件です。公開や商用利用前に本文確認が必要です。"
+      }
+    },
+    "unknown": {
+      "name": "Unknown",
+      "description": {
+        "en": "License information is not provided in the metadata.",
+        "ja": "ライセンス情報がメタデータに設定されていません。"
+      }
+    },
+    "other": {
+      "name": "Other",
+      "description": {
+        "en": "This repo uses another license. Review the model page or LICENSE file for the exact terms.",
+        "ja": "その他のライセンスです。モデルページや LICENSE ファイルで個別条件を確認してください。"
+      }
+    }
+  },
+  "ui": {
+    "AppTitle":            { "ja": "Hugging Face GGUF Downloader",                                                    "en": "Hugging Face GGUF Downloader" },
+    "Subtitle":            { "ja": "llama.cpp モデルを探して、.gguf ファイルを選んでインストールします。",                "en": "Browse llama.cpp models, pick one, then install a .gguf file." },
+    "Language":            { "ja": "Language",                                                                         "en": "Language" },
+    "CategoryTitle":       { "ja": "カテゴリを選択",                                                                   "en": "Select category" },
+    "CategoryHint":        { "ja": "Gemma や Qwen などの系統を選んでからモデル一覧を開きます。",                        "en": "Choose a family like Gemma or Qwen before opening the model list." },
+    "RefreshCatalog":      { "ja": "カタログ更新",                                                                     "en": "Refresh catalog" },
+    "OpenModelList":       { "ja": "モデル一覧を開く",                                                                 "en": "Open model list" },
+    "Others":              { "ja": "その他",                                                                           "en": "Others" },
+    "ModelList":           { "ja": "モデル一覧",                                                                       "en": "Model list" },
+    "ModelListFor":        { "ja": "モデル一覧: {0}",                                                                  "en": "Model list: {0}" },
+    "Back":                { "ja": "戻る",                                                                             "en": "Back" },
+    "RefreshModels":       { "ja": "モデル更新",                                                                       "en": "Refresh models" },
+    "SortBy":              { "ja": "並び順",                                                                           "en": "Sort by" },
+    "SortDownloads":       { "ja": "ダウンロード数",                                                                   "en": "Downloads" },
+    "SortLastUpdated":     { "ja": "更新日",                                                                           "en": "Last updated" },
+    "SortTrend":           { "ja": "トレンド",                                                                         "en": "Trend" },
+    "ColumnModel":         { "ja": "モデル名",                                                                         "en": "Model" },
+    "ColumnAuthor":        { "ja": "作者",                                                                             "en": "Author" },
+    "ColumnPublished":     { "ja": "公開日",                                                                           "en": "Published" },
+    "ColumnDownloads":     { "ja": "DL数",                                                                             "en": "Downloads" },
+    "OpenInstall":         { "ja": "インストールを開く",                                                               "en": "Open install" },
+    "FetchFiles":          { "ja": "ページ更新",                                                                       "en": "Refresh page" },
+    "ModelCard":           { "ja": "モデルカード",                                                                     "en": "Model card" },
+    "DownloadGguf":        { "ja": ".gguf をダウンロード",                                                             "en": "Download .gguf" },
+    "ColumnFile":          { "ja": "ファイル",                                                                         "en": "File" },
+    "ColumnSize":          { "ja": "サイズ",                                                                           "en": "Size" },
+    "SavePath":            { "ja": "保存先",                                                                           "en": "Save path" },
+    "Browse":              { "ja": "参照",                                                                             "en": "Browse" },
+    "InstallSelectedFile": { "ja": "ダウンロード",                                                                     "en": "Download" },
+    "SaveDialogTitle":     { "ja": "保存先を選択",                                                                     "en": "Choose save path" },
+    "Idle":                { "ja": "待機中",                                                                           "en": "Idle" },
+    "LoadingCatalog":      { "ja": "モデルカタログを読み込み中...",                                                    "en": "Loading model catalog..." },
+    "RefreshingCatalog":   { "ja": "モデルカタログを更新中...",                                                        "en": "Refreshing model catalog..." },
+    "LoadingFiles":        { "ja": ".gguf ファイルを取得中...",                                                        "en": "Fetching .gguf files..." },
+    "NoGguf":              { "ja": "この repo には .gguf ファイルがありません。",                                      "en": "No .gguf files found for this repo." },
+    "FetchedFiles":        { "ja": "{0} 件のファイルを取得しました",                                                   "en": "Fetched {0} file(s)" },
+    "LoadedModels":        { "ja": "{0} 件のモデルを読み込みました",                                                   "en": "Loaded {0} model(s)" },
+    "LoadedModelsCache":   { "ja": "キャッシュから {0} 件のモデルを読み込みました",                                    "en": "Loaded {0} model(s) from cache" },
+    "LoadedCategories":    { "ja": "{0} 件のモデルを {1} カテゴリ読み込みました ({2})",                                "en": "Loaded {0} model(s) in {1} categories from {2}" },
+    "RefreshedModels":     { "ja": "{0} 件のモデルを更新しました",                                                     "en": "Refreshed {0} model(s)" },
+    "RefreshedCategories": { "ja": "{0} 件のモデルを {1} カテゴリ更新しました",                                        "en": "Refreshed {0} model(s) in {1} categories" },
+    "BaseUnknown":         { "ja": "Base: 不明",                                                                       "en": "Base: Unknown" },
+    "PipelineUnknown":     { "ja": "Pipeline: 不明",                                                                   "en": "Pipeline: Unknown" },
+    "LanguageUnknown":     { "ja": "Language: 不明",                                                                   "en": "Language: Unknown" },
+    "LicenseUnknown":      { "ja": "License: 不明",                                                                    "en": "License: Unknown" },
+    "BasePrefix":          { "ja": "モデル元",                                                                         "en": "Base" },
+    "PipelinePrefix":      { "ja": "使用用途",                                                                         "en": "Pipeline" },
+    "LanguagePrefix":      { "ja": "利用可能言語",                                                                     "en": "Language" },
+    "LicensePrefix":       { "ja": "ライセンス",                                                                       "en": "License" },
+    "PipelineTooltip":     { "ja": "Pipeline tag は、このモデルの主な用途を示します。",                                "en": "Pipeline tag describes the model's main task category." },
+    "LicenseTooltip":      { "ja": "License は、このモデルの利用条件を示します。",                                     "en": "License describes the model's usage and redistribution terms." }
+  }
+}

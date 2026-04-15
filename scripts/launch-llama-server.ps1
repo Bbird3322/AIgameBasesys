@@ -1719,7 +1719,7 @@ $script:i18n = @{
 		mode = "実行モード"; estimate = "想定: -"; useAi = "並列起動で使うAI"; ready = "Ready."
 		openGame = "ゲームを開く"; start = "llama-server 起動"; close = "閉じる"
 		exePathCpu = "CPU 実行パス (LLAMA_CPP_EXE_CPU)"; exePathGpu = "GPU 実行パス (LLAMA_CPP_EXE_GPU)"; browse = "参照"; localCpu = "同梱CPU"; localGpu = "同梱GPU"
-		modelFolder = "AIモデルフォルダ (.gguf を走査)"; scan = ".gguf をスキャン"; modelList = "AIモデルのパス一覧"; saveBoot = "起動構成を保存"
+		modelFolder = "AIモデルフォルダ (.gguf を走査)"; scan = ".gguf をスキャン"; downloadAi = "AIをダウンロード"; modelList = "AIモデルのパス一覧"; saveBoot = "起動構成を保存"
 		aiList = "AI一覧"; detail = "詳細設定"; name = "名前"; modelName = "モデル名 (起動構成一覧から選択)"
 		updateDetail = "詳細を反映"; addAi = "AIを追加"; removeAi = "AIを削除"; saveAi = "AIモデルを保存"
 		settingsTitle = "設定"; language = "言語"; applyLanguage = "適用"; resetInit = "初期化設定"
@@ -1740,6 +1740,7 @@ $script:i18n = @{
 		estimateNone = "想定: AI未選択"; estimateCpu = "想定(CPU): モデル合計 {0} GiB / 必要RAM目安 {1} GiB / 実RAM {2} GiB"; estimateGpu = "想定(GPU): モデル合計 {0} GiB / 必要VRAM目安 {1} GiB"
 		statusAiDetailUpdated = "AI詳細を反映しました。"; statusAiDetailAuto = "AI詳細反映 + 自動補正: {0}件"; statusAiAdded = "AIを追加しました。"; statusAiAddedAuto = "AI追加 + Port自動採番"
 		statusAiSaved = "AIモデル設定を保存しました。"; statusAiSavedAuto = "AIモデル保存 + Port重複を自動補正"; statusScanning = ".gguf scan: {0}件"
+		statusDownloaderOpened = "AIダウンローダーを開きました。"; downloaderNotFound = "AIダウンローダーが見つかりません: {0}"
 		statusStarting = "llama-server 起動中... ({0} instance(s))"; statusReadyInstances = "Ready: {0} instance(s)"
 		statusStartingAnim = "llama-server 起動中{0}"; llamaTimeoutHeader = "llama-server の起動がタイムアウトしました。"
 		statusStartingElapsed = "{0}秒経過"
@@ -1771,7 +1772,7 @@ $script:i18n = @{
 		mode = "Run Mode"; estimate = "Estimate: -"; useAi = "AI to launch in parallel"; ready = "Ready."
 		openGame = "Open Game"; start = "Start llama-server"; close = "Close"
 		exePathCpu = "CPU executable path (LLAMA_CPP_EXE_CPU)"; exePathGpu = "GPU executable path (LLAMA_CPP_EXE_GPU)"; browse = "Browse"; localCpu = "Bundled CPU"; localGpu = "Bundled GPU"
-		modelFolder = "AI model folder (scan .gguf)"; scan = "Scan .gguf"; modelList = "Model path list"; saveBoot = "Save Boot Config"
+		modelFolder = "AI model folder (scan .gguf)"; scan = "Scan .gguf"; downloadAi = "Download AI"; modelList = "Model path list"; saveBoot = "Save Boot Config"
 		aiList = "AI List"; detail = "Details"; name = "Name"; modelName = "Model name (select from boot list)"
 		updateDetail = "Apply Details"; addAi = "Add AI"; removeAi = "Remove AI"; saveAi = "Save AI Models"
 		settingsTitle = "Settings"; language = "Language"; applyLanguage = "Apply"; resetInit = "Reset to Defaults"
@@ -1792,6 +1793,7 @@ $script:i18n = @{
 		estimateNone = "Estimate: no AI selected"; estimateCpu = "Estimate (CPU): models {0} GiB / RAM required {1} GiB / RAM {2} GiB"; estimateGpu = "Estimate (GPU): models {0} GiB / VRAM required {1} GiB"
 		statusAiDetailUpdated = "AI details updated."; statusAiDetailAuto = "AI details updated + auto-fix: {0}"; statusAiAdded = "AI added."; statusAiAddedAuto = "AI added + port auto-assigned"
 		statusAiSaved = "AI model settings saved."; statusAiSavedAuto = "AI models saved + port conflicts fixed"; statusScanning = ".gguf scan: {0}"
+		statusDownloaderOpened = "AI downloader opened."; downloaderNotFound = "AI downloader was not found: {0}"
 		statusStarting = "Starting llama-server... ({0} instance(s))"; statusReadyInstances = "Ready: {0} instance(s)"
 		statusStartingAnim = "Starting llama-server{0}"; llamaTimeoutHeader = "llama-server startup timed out."
 		statusStartingElapsed = "{0}s elapsed"
@@ -2063,6 +2065,12 @@ $scanModelFolderButton.Text = "Scan .gguf"
 $scanModelFolderButton.Location = New-Object System.Drawing.Point(718, 154)
 $scanModelFolderButton.Size = New-Object System.Drawing.Size(160, 30)
 $tabBoot.Controls.Add($scanModelFolderButton)
+
+$downloadAiButton = New-Object System.Windows.Forms.Button
+$downloadAiButton.Text = "AIをダウンロード"
+$downloadAiButton.Location = New-Object System.Drawing.Point(718, 188)
+$downloadAiButton.Size = New-Object System.Drawing.Size(160, 30)
+$tabBoot.Controls.Add($downloadAiButton)
 
 $modelListLabel = New-Object System.Windows.Forms.Label
 $modelListLabel.Text = "AIモデルのパス一覧"
@@ -2612,6 +2620,7 @@ function Apply-UiLanguage {
 	$modelFolderLabel.Text = Get-UiText "modelFolder"
 	$browseModelFolderButton.Text = Get-UiText "browse"
 	$scanModelFolderButton.Text = Get-UiText "scan"
+	$downloadAiButton.Text = Get-UiText "downloadAi"
 	$modelListLabel.Text = Get-UiText "modelList"
 	$saveBootButton.Text = Get-UiText "saveBoot"
 	$aiListLabel.Text = Get-UiText "aiList"
@@ -3255,6 +3264,23 @@ $scanModelFolderButton.Add_Click({
 	Update-AiUnsavedWarning
 	Update-AiDetailUnsavedWarning
 	$statusLabel.Text = ([string]::Format((Get-UiText "statusScanning"), $models.Count))
+})
+
+$downloadAiButton.Add_Click({
+	$downloaderExePath = Join-Path $rootDir "HF-GGUF-Downloader.exe"
+	if (-not (Test-Path -LiteralPath $downloaderExePath -PathType Leaf)) {
+		[System.Windows.Forms.MessageBox]::Show(
+			([string]::Format((Get-UiText "downloaderNotFound"), $downloaderExePath)),
+			"Launcher",
+			[System.Windows.Forms.MessageBoxButtons]::OK,
+			[System.Windows.Forms.MessageBoxIcon]::Warning
+		) | Out-Null
+		return
+	}
+
+	Start-Process -FilePath $downloaderExePath -WorkingDirectory $rootDir | Out-Null
+
+	$statusLabel.Text = Get-UiText "statusDownloaderOpened"
 })
 
 $agentCheckList.Add_ItemCheck({

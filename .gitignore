@@ -1,7 +1,7 @@
 # Runtime-generated state
 scripts/llama-server.state.json
 scripts/game-server.state.json
-config/**/*.json
+config/**
 scripts/llama-server.env.bat
 logs/**
 

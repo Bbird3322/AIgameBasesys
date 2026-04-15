@@ -50,6 +50,8 @@ $rootDir = Get-RootDir
 $startPs1 = Join-Path $rootDir "release\LauncherEntry.ps1"
 $startExe = Join-Path $rootDir "LLMGameBaseLauncher.exe"
 $launcherPs1 = Join-Path $rootDir "scripts\launch-llama-server.ps1"
+$downloaderPs1 = Join-Path $rootDir "scripts\hf-gguf-downloader.ps1"
+$downloaderExe = Join-Path $rootDir "HF-GGUF-Downloader.exe"
 
 if (-not (Test-Path -LiteralPath $startPs1 -PathType Leaf)) {
   throw "release\\LauncherEntry.ps1 not found: $startPs1"
@@ -57,10 +59,15 @@ if (-not (Test-Path -LiteralPath $startPs1 -PathType Leaf)) {
 if (-not (Test-Path -LiteralPath $launcherPs1 -PathType Leaf)) {
   throw "launch-llama-server.ps1 not found: $launcherPs1"
 }
+if (-not (Test-Path -LiteralPath $downloaderPs1 -PathType Leaf)) {
+  throw "hf-gguf-downloader.ps1 not found: $downloaderPs1"
+}
 
 Ensure-Ps2Exe
 
 Invoke-ps2exe -inputFile $startPs1 -outputFile $startExe -x64 -STA -noConsole -title "LLM Game Base Launcher"
+Invoke-ps2exe -inputFile $downloaderPs1 -outputFile $downloaderExe -x64 -STA -noConsole -title "HF GGUF Downloader"
 
 Write-Output "Built:"
 Write-Output "  $startExe"
+Write-Output "  $downloaderExe"
